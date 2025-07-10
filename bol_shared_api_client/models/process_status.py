@@ -110,7 +110,7 @@ class ProcessStatus(BaseModel):
             "status": obj.get("status"),
             "errorMessage": obj.get("errorMessage"),
             "createTimestamp": obj.get("createTimestamp"),
-            "links": [Link.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None
+            "links": [Link.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else []
         })
         return _obj
 

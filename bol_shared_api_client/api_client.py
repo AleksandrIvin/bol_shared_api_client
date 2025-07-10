@@ -399,7 +399,8 @@ class ApiClient:
                 data = json.loads(response_text)
             except ValueError:
                 data = response_text
-        elif content_type.startswith("application/json"):
+        elif (content_type.startswith("application/json") or
+              content_type.startswith("application/vnd.retailer.v10+json")):
             if response_text == "":
                 data = ""
             else:
